@@ -6,7 +6,7 @@
     <title>TechnoBytes</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body> 
+<body> <!--test-->
 
 <div id="flash"></div>
 
@@ -14,10 +14,12 @@
     <div class="sidebar-frames" id="frame-sidebar">
         <p style="text-align:center; font-size: 11px; color: var(--accent); font-weight: bold;">SELECT FRAME</p>
      <img src="TechnoLayer1.png" class="frame-thumb" data-id="14" crossorigin="anonymous">
-     <img src="StudentCouncil.png" class="frame-thumb" data-id="2" crossorigin="anonymous">
+     <img src="StudentCouncilLayer1.png" class="frame-thumb" data-id="2" crossorigin="anonymous">
      <img src="StagLayer1.png" class="frame-thumb" data-id="3" crossorigin="anonymous">
      <img src="ChronLayer1.png" class="frame-thumb" data-id="4" crossorigin="anonymous">
      <img src="VigiLayer1.png" class="frame-thumb" data-id="13" crossorigin="anonymous">
+    <img src="LigaLayer1.png" class="frame-thumb" data-id="28" crossorigin="anonymous">
+
      <img src="DonatoLayer1.png" class="frame-thumb" data-id="17" crossorigin="anonymous">
      <img src="SanrioLayer1.png" class="frame-thumb" data-id="16" crossorigin="anonymous">
      <img src="PinkLayer1.png" class="frame-thumb" data-id="6" crossorigin="anonymous">
@@ -28,7 +30,16 @@
      <img src="NerdLayer1.png" class="frame-thumb" data-id="11" crossorigin="anonymous">
      <img src="ReceiptLayer1.png" class="frame-thumb" data-id="12" crossorigin="anonymous">
      <img src="ShrekLayer1.png" class="frame-thumb" data-id="15" crossorigin="anonymous">
-
+     <img src="StitchLayer1.png" class="frame-thumb" data-id="18" crossorigin="anonymous">
+     <img src="Min1Layer1.png" class="frame-thumb" data-id="19" crossorigin="anonymous">
+     <img src="Min2Layer1.png" class="frame-thumb" data-id="20" crossorigin="anonymous">
+     <img src="Min3Layer1.png" class="frame-thumb" data-id="21" crossorigin="anonymous">
+     <img src="Min4Layer1.png" class="frame-thumb" data-id="22" crossorigin="anonymous">
+     <img src="Min5Layer1.png" class="frame-thumb" data-id="23" crossorigin="anonymous">
+     <img src="Min6Layer1.png" class="frame-thumb" data-id="24" crossorigin="anonymous">
+     <img src="Min7Layer1.png" class="frame-thumb" data-id="25" crossorigin="anonymous">
+     <img src="Min8Layer1.png" class="frame-thumb" data-id="26" crossorigin="anonymous">
+     <img src="Min9Layer1.png" class="frame-thumb" data-id="27" crossorigin="anonymous">
 
 
     </div>
@@ -64,10 +75,41 @@
     <img src="ShrekLayer2.png" id="shrek-layer2" style="display:none;" crossorigin="anonymous">
     <img src="SanrioLayer1.png" id="sanrio-layer1" style="display:none;" crossorigin="anonymous">
     <img src="SanrioLayer2.png" id="sanrio-layer2" style="display:none;" crossorigin="anonymous">
+    <img src="StitchLayer1.png" id="stitch-layer1" style="display:none;" crossorigin="anonymous">
+    <img src="StitchLayer2.png" id="stitch-layer2" style="display:none;" crossorigin="anonymous">
+    <img src="Min1Layer1.png" id="min1-layer1" style="display:none;" crossorigin="anonymous">
+    <img src="Min1Layer2.png" id="min1-layer2" style="display:none;" crossorigin="anonymous">
+    <img src="Min2Layer1.png" id="min2-layer1" style="display:none;" crossorigin="anonymous">
+    <img src="Min2Layer2.png" id="min2-layer2" style="display:none;" crossorigin="anonymous">
+    <img src="Min3Layer1.png" id="min3-layer1" style="display:none;" crossorigin="anonymous">
+    <img src="Min3Layer2.png" id="min3-layer2" style="display:none;" crossorigin="anonymous">
+    <img src="Min4Layer1.png" id="min4-layer1" style="display:none;" crossorigin="anonymous">
+    <img src="Min4Layer2.png" id="min4-layer2" style="display:none;" crossorigin="anonymous">
+    <img src="Min5Layer1.png" id="min5-layer1" style="display:none;" crossorigin="anonymous">
+    <img src="Min5Layer2.png" id="min5-layer2" style="display:none;" crossorigin="anonymous">
+    <img src="Min6Layer1.png" id="min6-layer1" style="display:none;" crossorigin="anonymous">
+    <img src="Min6Layer2.png" id="min6-layer2" style="display:none;" crossorigin="anonymous">
+    <img src="Min7Layer1.png" id="min7-layer1" style="display:none;" crossorigin="anonymous">
+    <img src="Min7Layer2.png" id="min7-layer2" style="display:none;" crossorigin="anonymous">
+    <img src="Min8Layer1.png" id="min8-layer1" style="display:none;" crossorigin="anonymous">
+    <img src="Min8Layer2.png" id="min8-layer2" style="display:none;" crossorigin="anonymous">
+    <img src="Min9Layer1.png" id="min9-layer1" style="display:none;" crossorigin="anonymous">
+    <img src="Min9Layer2.png" id="min9-layer2" style="display:none;" crossorigin="anonymous">
+    <img src="LigaLayer1.png" id="liga-layer1" style="display:none;" crossorigin="anonymous">
+    <img src="LigaLayer2.png" id="liga-layer2" style="display:none;" crossorigin="anonymous">
 
     <div class="viewport">
-        <video id="camera-view" autoplay playsinline></video>
+        <div class="camera-container">
+            <video id="camera-view" autoplay playsinline></video>
+            <div id="camera-guide"></div>
+        </div>
         <canvas id="final-canvas"></canvas>
+
+        <div id="selection-screen" style="display: none;">
+            <h3 style="color: white; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Select 3 Photos</h3>
+            <div id="selection-grid"></div>
+            <button id="confirm-selection-btn">Create Strip</button>
+        </div>
 
         <div class="controls">
             <button id="start-btn">Start Shoot</button>
