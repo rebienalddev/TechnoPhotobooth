@@ -1,4 +1,4 @@
-:root { --bg: #0a0a0a; --accent: #ffffff; --panel: #151515; }
+   :root { --bg: #0a0a0a; --accent: #ffffff; --panel: #151515; }
         body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: var(--bg); color: white; font-family: 'Inter', sans-serif; overflow: hidden; }
 
         .app-container {
@@ -8,6 +8,7 @@
             width: 100vw;
         }
 
+        /* Sidebar: Frames */
         .sidebar-frames {
             background: var(--panel);
             border-right: 1px solid #333;
@@ -41,6 +42,7 @@
         }
         .frame-thumb.selected { border-color: var(--accent); transform: scale(1.02); }
 
+        /* Main Viewport */
         .viewport {
             position: relative;
             display: flex;
@@ -50,7 +52,16 @@
             background: #000;
         }
 
-        #camera-view { width: 85%; max-height: 70%; border-radius: 12px; transform: scaleX(-1); }
+        .camera-container {
+            position: relative;
+            width: 85%;
+            max-height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #camera-view { width: auto; height: auto; max-width: 100%; max-height: 100%; border-radius: 12px; transform: scaleX(-1); }
         #final-canvas { display: none; max-height: 85vh; max-width: 90%; box-shadow: 0 0 50px rgba(0,0,0,0.8); }
 
         .controls { margin-top: 25px; display: flex; gap: 15px; z-index: 10; }
@@ -60,6 +71,7 @@
             text-transform: uppercase; letter-spacing: 1px;
         }
         
+        /* Filters */
         .sidebar-filters { background: var(--panel); border-left: 1px solid #333; padding: 20px; }
         .filter-btn {
             width: 100%; margin-bottom: 10px; background: #252525; color: #fff;
@@ -67,8 +79,70 @@
         }
         .filter-btn.active { background: var(--accent); color: #000; border-color: var(--accent); }
 
+        /* Effects */
         #flash { position: fixed; inset: 0; background: white; opacity: 0; pointer-events: none; z-index: 9999; }
         .countdown {
             position: absolute; font-size: 12rem; color: white;
             font-weight: 900; z-index: 100; pointer-events: none;
+        }
+
+        #camera-guide {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px dashed rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.8);
+            z-index: 5;
+            pointer-events: none;
+            display: none;
+            border-radius: 12px;
+        }
+
+        #selection-screen {
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 10, 10, 0.95);
+            z-index: 20;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            display: none; 
+        }
+
+        #selection-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .selection-thumb {
+            width: 100%;
+            aspect-ratio: 0.923;
+            object-fit: cover;
+            border: 4px solid #555;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .selection-thumb.selected {
+            border-color: var(--accent);
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .selection-number {
+            position: absolute;
+            top: 8px; left: 8px;
+            width: 24px; height: 24px;
+            background: var(--accent); color: #000;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 12px;
+            z-index: 10; pointer-events: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
